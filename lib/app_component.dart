@@ -10,7 +10,8 @@ import 'package:angular_forms/angular_forms.dart';
   template: '''
     <h1>Hello {{name}}</h1>
     <form #myForm="ngForm">
-      <input type="text" ngControl="myInput" #myInput="ngForm" [class.valid]="myInput.valid" [class.invalid]="!myInput.valid" validateParameters />
+      <input type="text" ngControl="myInput" #myInput="ngForm" validateParameters />
+      <input type="text" ngControl="myRequiredInput" #myRequiredInput="ngForm" required />
     </form>''',
   styles: [
     ':valid {  border-color: #28a745 !important;  border-width: 3px !important; }',
