@@ -12,10 +12,16 @@ import 'package:angular_forms/angular_forms.dart';
     <form #myForm="ngForm">
       <input type="text" ngControl="myInput" #myInput="ngForm" validateParameters />
       <input type="text" ngControl="myRequiredInput" #myRequiredInput="ngForm" required />
+
+      <br><span *ngIf="myInput.valid">myInput control is valid</span>
+      <br><span *ngIf="!myInput.valid">myInput control is invalid</span>
+
+      <br><span *ngIf="myRequiredInput.valid">myRequiredInput control is valid</span>
+      <br><span *ngIf="!myRequiredInput.valid">myRequiredInput control is invalid</span>
     </form>''',
   styles: [
-    ':valid {  border-color: #28a745 !important;  border-width: 3px !important; }',
-    ':invalid {  border-color: #dc3545 !important;  border-width: 3px !important; }'])
+    ':valid {  border-color: #28a745;  border-width: 3px; }',
+    ':invalid {  border-color: #dc3545;  border-width: 3px; }'])
 class AppComponent {
   var name = 'Angular';
 }
